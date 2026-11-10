@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="sq">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Variabla, funksioni dhe struktura ne C++</title>
+    <meta
+      name="google-site-verification"
+      content="googlebe354e8f44e9c785.html"
+    />
+  </head>
+  <body>
+    <h1>Variabla, funksioni dhe struktura ne C++</h1>
+
+   
+
+    <h2>1. Cfare eshte variabla?</h2>
+    <p>
+      Variabla eshte nje vend ne kompjuter ku e ruajme nje vlere. Mund ta
+      mendojme si nje kuti qe ka nje emer. Brenda kutise e vendosim vleren.
+    </p>
+
+    <p>Shembull: kutia me emrin <b>mosha</b> ka brenda numrin 15.</p>
+
+    <p>mosha</p>
+    <div class="kutia">15</div>
+
+    <h2>2. Si shkruhet variabla ne C++</h2>
+    <p class="kod">int mosha = 15;</p>
+
+    <p>
+      int - lloji i variables (numer i plote)<br />
+      mosha - emri i variables<br />
+      = - e vendos vleren ne kuti<br />
+      15 - vlera<br />
+      ; - cdo rresht ne C++ mbaron me pikepresje
+    </p>
+
+    <h3>Pamja me shigjeta: pjeset e variables</h3>
+    <table class="skema">
+      <tr>
+        <td class="kodi">int</td>
+        <td class="kodi">mosha</td>
+        <td class="kodi">=</td>
+        <td class="kodi">15</td>
+        <td class="kodi">;</td>
+      </tr>
+      <tr>
+        <td class="shg">&uarr;</td>
+        <td class="shg">&uarr;</td>
+        <td class="shg">&uarr;</td>
+        <td class="shg">&uarr;</td>
+        <td class="shg">&uarr;</td>
+      </tr>
+      <tr>
+        <td>lloji<br />(numer i plote)</td>
+        <td>emri<br />(etiketa e kutise)</td>
+        <td>vendos<br />vleren</td>
+        <td>vlera<br />(ate qe ruajme)</td>
+        <td>fundi<br />i rreshtit</td>
+      </tr>
+    </table>
+
+    <h2>3. Pse quhet variabel?</h2>
+    <p>Quhet variabel sepse vlera mund te ndryshoje. Per shembull:</p>
+
+    <p class="kod">
+      int mosha = 15;<br />
+      mosha = 16;
+    </p>
+
+    <p>
+      Ne fillim kutia ka 15, pastaj e ndryshojme dhe ka 16. Emri mbetet po ai,
+      ndryshon vetem vlera. Kur e ndryshojme nuk shkruajme me "int", sepse
+      variabla eshte krijuar tashme.
+    </p>
+
+    <h3>Pamja me shigjeta: variabla ndryshon</h3>
+    <div class="rreshti">
+      <div class="blloku"><b>mosha</b><br />15</div>
+      <div class="shigjeta"><small>mosha = 16;</small>&rarr;</div>
+      <div class="blloku"><b>mosha</b><br />16</div>
+    </div>
+    <p>
+      Kutia ka te njejtin emer, por vlera e vjeter (15) shkon dhe vjen vlera e
+      re (16).
+    </p>
+
+    <h2>4. Llojet e variablave ne C++</h2>
+    <table border="1" cellpadding="8">
+      <tr>
+        <th>Lloji</th>
+        <th>Cfare ruan</th>
+        <th>Shembull</th>
+      </tr>
+      <tr>
+        <td>int</td>
+        <td>numer i plote</td>
+        <td>int nota = 10;</td>
+      </tr>
+      <tr>
+        <td>double</td>
+        <td>numer me presje</td>
+        <td>double cmimi = 9.5;</td>
+      </tr>
+      <tr>
+        <td>char</td>
+        <td>nje shkronje</td>
+        <td>char shkronja = 'A';</td>
+      </tr>
+      <tr>
+        <td>string</td>
+        <td>tekst</td>
+        <td>string emri = "Arben";</td>
+      </tr>
+      <tr>
+        <td>bool</td>
+        <td>true ose false</td>
+        <td>bool jeStudent = true;</td>
+      </tr>
+    </table>
+
+    <!-- ===================== FUNKSIONI ===================== -->
+
+    <h2>5. Cfare eshte funksioni?</h2>
+    <p>
+      Funksioni eshte nje pjese kodi qe ka nje emer dhe ben nje pune te caktuar.
+      Kur na duhet ajo pune, thjesht e thirrim funksionin me emrin e tij. Keshtu
+      nuk e shkruajme te njejtin kod disa here.
+    </p>
+
+    <p>
+      Mund ta mendojme si nje makine: i japim disa gjera (hyrjen), ajo punon,
+      dhe na kthen nje rezultat (daljen).
+    </p>
+
+    <p>Shembull: funksion qe mbledh dy numra.</p>
+
+    <pre class="kod">
+int mbledh(int a, int b) {
+    int shuma = a + b;
+    return shuma;
+}</pre
+    >
+
+    <p>Pjeset e funksionit:</p>
+    <table border="1" cellpadding="8">
+      <tr>
+        <th>Pjesa</th>
+        <th>Ne shembull</th>
+        <th>Shpjegimi</th>
+      </tr>
+      <tr>
+        <td>Lloji qe kthen</td>
+        <td>int</td>
+        <td>Lloji i rezultatit qe na jep funksioni (ketu numer i plote)</td>
+      </tr>
+      <tr>
+        <td>Emri</td>
+        <td>mbledh</td>
+        <td>Me kete emer e thirrim funksionin</td>
+      </tr>
+      <tr>
+        <td>Parametrat</td>
+        <td>int a, int b</td>
+        <td>
+          Vlerat qe i japim funksionit. Jane variabla qe ekzistojne vetem brenda
+          funksionit
+        </td>
+      </tr>
+      <tr>
+        <td>Trupi</td>
+        <td>{ ... }</td>
+        <td>Kodi qe ekzekutohet kur thirret funksioni</td>
+      </tr>
+      <tr>
+        <td>return</td>
+        <td>return shuma;</td>
+        <td>Kthen rezultatin dhe e mbyll funksionin</td>
+      </tr>
+    </table>
+
+    <p>Si e thirrim funksionin:</p>
+    <pre class="kod">int rezultati = mbledh(5, 3);</pre>
+
+    <p>
+      Ketu 5 shkon te a, 3 shkon te b, funksioni i mbledh dhe kthen 8. Pastaj
+      numri 8 ruhet ne variablen <b>rezultati</b>.
+    </p>
+
+    <h3>Pamja me shigjeta: si punon funksioni</h3>
+    <div class="rreshti">
+      <div class="blloku"><b>HYRJA</b><br />5 dhe 3</div>
+      <div class="shigjeta">&rarr;</div>
+      <div class="blloku"><b>FUNKSIONI</b><br />mbledh(a, b)<br />a + b</div>
+      <div class="shigjeta">&rarr;</div>
+      <div class="blloku"><b>DALJA</b><br />8</div>
+    </div>
+
+    <p>Ku shkon cdo vlere kur e thirrim funksionin:</p>
+    <table class="skema">
+      <tr>
+        <td>vlerat qe dergojme:</td>
+        <td class="kodi">5</td>
+        <td class="kodi">3</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="shg">&darr;</td>
+        <td class="shg">&darr;</td>
+      </tr>
+      <tr>
+        <td>parametrat qe i marrin:</td>
+        <td class="kodi">a</td>
+        <td class="kodi">b</td>
+      </tr>
+    </table>
+
+    <p>
+      Hap pas hapi, cfare ndodh kur shkruajme
+      <b>int rezultati = mbledh(5, 3);</b>
+    </p>
+    <div class="hapat">
+      <div class="blloku">1. Thirret mbledh(5, 3)</div>
+      <div class="shigjeta">&darr;</div>
+      <div class="blloku">2. a = 5 dhe b = 3</div>
+      <div class="shigjeta">&darr;</div>
+      <div class="blloku">3. shuma = 5 + 3 = 8</div>
+      <div class="shigjeta">&darr;</div>
+      <div class="blloku">4. return shuma; (kthen 8)</div>
+      <div class="shigjeta">&darr;</div>
+      <div class="blloku">5. rezultati = 8</div>
+    </div>
+
+    <p>
+      Funksioni pa rezultat quhet <b>void</b>. Ai vetem ben nje pune dhe nuk
+      kthen asgje:
+    </p>
+    <pre class="kod">
+void pershendet() {
+    cout &lt;&lt; "Pershendetje!" &lt;&lt; endl;
+}</pre
+    >
+
+    <p>
+      <b>Lidhja me variablat:</b> variabla e krijuar brenda funksionit (si
+      <i>shuma</i>) ekziston vetem brenda tij. Jashte funksionit nuk mund ta
+      perdorim. Kjo quhet variabel lokale.
+    </p>
+
+    <!-- ===================== STRUKTURA ===================== -->
+
+    <h2>6. Cfare eshte struktura?</h2>
+    <p>
+      Struktura (struct) na lejon te bashkojme disa variabla ne nje grup te
+      vetem. Variablat brenda struktures mund te jene te llojeve te ndryshme.
+    </p>
+
+    <p>
+      Per shembull, nje student ka emer, moshe dhe note. Ne vend qe t'i bejme
+      tre variabla te ndara, i bashkojme ne nje strukture te quajtur Student.
+    </p>
+
+    <pre class="kod">
+struct Student {
+    string emri;
+    int mosha;
+    double nota;
+};</pre
+    >
+
+    <p>Struktura si kuti qe ka kuti brenda:</p>
+    <div class="struktura">
+      <b>Student</b><br /><br />
+      emri: "Arben"<br />
+      mosha: 15<br />
+      nota: 9.5
+    </div>
+
+    <p>
+      Kujdes: ky kod vetem e pershkruan strukturen, si nje skice. Per ta
+      perdorur duhet te krijojme nje variabel te llojit Student:
+    </p>
+
+    <pre class="kod">
+Student s1;
+s1.emri = "Arben";
+s1.mosha = 15;
+s1.nota = 9.5;</pre
+    >
+
+    <p>
+      Pika (.) perdoret per te hyre ne nje pjese te struktures.
+      <b>s1.mosha</b> do te thote "mosha e studentit s1".
+    </p>
+
+    <h3>Pamja me shigjeta: struktura s1</h3>
+    <table class="skema">
+      <tr>
+        <td><b>Si e shkruajme</b></td>
+        <td></td>
+        <td><b>Cfare ruan</b></td>
+      </tr>
+      <tr>
+        <td class="kodi">s1.emri</td>
+        <td class="shg">&rarr;</td>
+        <td class="kodi">"Arben"</td>
+      </tr>
+      <tr>
+        <td class="kodi">s1.mosha</td>
+        <td class="shg">&rarr;</td>
+        <td class="kodi">15</td>
+      </tr>
+      <tr>
+        <td class="kodi">s1.nota</td>
+        <td class="shg">&rarr;</td>
+        <td class="kodi">9.5</td>
+      </tr>
+    </table>
+    <p>
+      Struktura (Student) &rarr; variabla (s1) &rarr; pjeset e saj (emri, mosha,
+      nota).
+    </p>
+
+    <!-- ===================== PROGRAMI I PLOTE ===================== -->
+
+    <h2>7. Nje program i plote qe i bashkon te gjitha</h2>
+
+    <pre class="kod">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+// struktura
+struct Student {
+    string emri;
+    int mosha;
+    double nota;
+};
+
+// funksion qe kthen rezultat
+int mbledh(int a, int b) {
+    int shuma = a + b;
+    return shuma;
+}
+
+// funksion qe merr nje strukture dhe e shfaq
+void shfaqStudentin(Student s) {
+    cout &lt;&lt; "Emri: " &lt;&lt; s.emri &lt;&lt; endl;
+    cout &lt;&lt; "Mosha: " &lt;&lt; s.mosha &lt;&lt; endl;
+    cout &lt;&lt; "Nota: " &lt;&lt; s.nota &lt;&lt; endl;
+}
+
+int main() {
+    // variabla
+    int x = 5;
+    int y = 3;
+
+    // thirrja e funksionit
+    int rezultati = mbledh(x, y);
+    cout &lt;&lt; "Shuma: " &lt;&lt; rezultati &lt;&lt; endl;
+
+    // variabel e llojit struktura
+    Student s1;
+    s1.emri = "Arben";
+    s1.mosha = 15;
+    s1.nota = 9.5;
+
+    shfaqStudentin(s1);
+
+    return 0;
+}</pre
+    >
+
+    <p>Programi shfaq:</p>
+    <pre class="kod">
+Shuma: 8
+Emri: Arben
+Mosha: 15
+Nota: 9.5</pre
+    >
+
+    <h3>Pamja me shigjeta: si ekzekutohet programi</h3>
+    <div class="hapat">
+      <div class="blloku">main() fillon</div>
+      <div class="shigjeta">&darr;</div>
+      <div class="blloku">x = 5 dhe y = 3<br />(variabla)</div>
+      <div class="shigjeta">&darr;</div>
+      <div class="blloku">thirret mbledh(x, y)<br />(funksion)</div>
+      <div class="shigjeta">&darr;</div>
+      <div class="blloku">
+        kthen 8 &rarr; rezultati = 8<br />shfaqet "Shuma: 8"
+      </div>
+      <div class="shigjeta">&darr;</div>
+      <div class="blloku">
+        krijohet s1 dhe mbushen<br />emri, mosha, nota<br />(struktura)
+      </div>
+      <div class="shigjeta">&darr;</div>
+      <div class="blloku">thirret shfaqStudentin(s1)<br />(funksion)</div>
+      <div class="shigjeta">&darr;</div>
+      <div class="blloku">shfaqen 3 rreshta<br />Emri, Mosha, Nota</div>
+      <div class="shigjeta">&darr;</div>
+      <div class="blloku">return 0;<br />programi mbaron</div>
+    </div>
+
+    <h2>Perfundim</h2>
+    <p>
+      Variabla ruan nje vlere dhe ka nje emer dhe nje lloj. Funksioni eshte kod
+      me emer qe e thirrim kur na duhet, dhe mund te ktheje rezultat. Struktura
+      bashkon disa variabla ne nje grup te vetem. Ne C++ duhet gjithmone ta
+      shkruajme llojin kur e krijojme variablen.
+    </p>
+  </body>
+</html>
